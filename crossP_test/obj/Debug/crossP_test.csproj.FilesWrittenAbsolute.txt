@@ -1,0 +1,7 @@
+/Users/mikio/Projects/sandbox/crossP_test/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/mikio/Projects/sandbox/crossP_test/bin/Debug/crossP_test.dll.mdb
+/Users/mikio/Projects/sandbox/crossP_test/bin/Debug/crossP_test.dll
+/Users/mikio/Projects/sandbox/crossP_test/obj/Debug/crossP_test.dll
+/Users/mikio/Projects/sandbox/crossP_test/obj/Debug/crossP_test.dll.mdb
+/Users/mikio/Projects/sandbox/crossP_test/bin/Debug/Xamarin.Forms.Core.dll
+/Users/mikio/Projects/sandbox/crossP_test/bin/Debug/Xamarin.Forms.Xaml.dll
