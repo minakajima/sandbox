@@ -22,5 +22,10 @@ namespace MyMemo
         {
             Text = ApplicationName;
         }
+
+        private void MenuItemFileExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
