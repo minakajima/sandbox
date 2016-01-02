@@ -32,6 +32,11 @@
             this.MenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMain = new System.Windows.Forms.TextBox();
+            this.MenuItemFileNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +53,11 @@
             // MenuItemFile
             // 
             this.MenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemFileNew,
+            this.MenuItemFileOpen,
+            this.MenuItemFileSave,
+            this.MenuItemFileSaveAs,
+            this.MenuItemFileSeparator1,
             this.MenuItemFileExit});
             this.MenuItemFile.Name = "MenuItemFile";
             this.MenuItemFile.Size = new System.Drawing.Size(85, 22);
@@ -56,7 +66,7 @@
             // MenuItemFileExit
             // 
             this.MenuItemFileExit.Name = "MenuItemFileExit";
-            this.MenuItemFileExit.Size = new System.Drawing.Size(118, 22);
+            this.MenuItemFileExit.Size = new System.Drawing.Size(202, 22);
             this.MenuItemFileExit.Text = "終了(&X)";
             this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
             // 
@@ -66,6 +76,38 @@
             this.textBoxMain.Name = "textBoxMain";
             this.textBoxMain.Size = new System.Drawing.Size(100, 19);
             this.textBoxMain.TabIndex = 1;
+            // 
+            // MenuItemFileNew
+            // 
+            this.MenuItemFileNew.Name = "MenuItemFileNew";
+            this.MenuItemFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.MenuItemFileNew.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileNew.Text = "新規(&N)";
+            // 
+            // MenuItemFileOpen
+            // 
+            this.MenuItemFileOpen.Name = "MenuItemFileOpen";
+            this.MenuItemFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.MenuItemFileOpen.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileOpen.Text = "開く(&O)...";
+            // 
+            // MenuItemFileSave
+            // 
+            this.MenuItemFileSave.Name = "MenuItemFileSave";
+            this.MenuItemFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.MenuItemFileSave.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileSave.Text = "上書き保存(&S)";
+            // 
+            // MenuItemFileSaveAs
+            // 
+            this.MenuItemFileSaveAs.Name = "MenuItemFileSaveAs";
+            this.MenuItemFileSaveAs.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileSaveAs.Text = "名前を付けて保存(&A)...";
+            // 
+            // MenuItemFileSeparator1
+            // 
+            this.MenuItemFileSeparator1.Name = "MenuItemFileSeparator1";
+            this.MenuItemFileSeparator1.Size = new System.Drawing.Size(199, 6);
             // 
             // Form1
             // 
@@ -91,6 +133,11 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileExit;
         private System.Windows.Forms.TextBox textBoxMain;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFileNew;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFileOpen;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFileSave;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFileSaveAs;
+        private System.Windows.Forms.ToolStripSeparator MenuItemFileSeparator1;
     }
 }
 
