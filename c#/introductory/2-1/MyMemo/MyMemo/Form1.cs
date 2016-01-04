@@ -44,12 +44,12 @@ namespace MyMemo
             if (Edited) s += "(変更あり) ";
             this.Text = s;
 
-            if (FileName == "" || !Edited)
+            if (FileName == "" || !Edited || textBoxMain.TextLength == 0)
                 MenuItemFileSave.Enabled = false;
             else
                 MenuItemFileSave.Enabled = true;
 
-            if (!Edited)
+            if (!Edited || textBoxMain.TextLength == 0)
                 MenuItemFileSaveAs.Enabled = false;
             else
                 MenuItemFileSaveAs.Enabled = true;
