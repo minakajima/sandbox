@@ -12,8 +12,22 @@ namespace MyMemo
 {
     public partial class Form1 : Form
     {
-        const string ApplicationName = "MyMemo";
-        private string FileName = "";
+        const string ApplicationName = "MyMemo";　// アプリ名
+        private string FileNameValue = "";
+        private string FileName
+        {
+            get { return FileNameValue; }
+            set
+            {
+                string s = ApplicationName;
+                if(value != "")
+                {
+                    s += " - " + value;
+                }
+                this.Text = s;
+                FileNameValue = value;
+            }
+        }
 
         public Form1()
         {
