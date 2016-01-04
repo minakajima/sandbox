@@ -30,13 +30,14 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxMain = new System.Windows.Forms.TextBox();
             this.MenuItemFileNew = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxMain = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,20 +64,6 @@
             this.MenuItemFile.Size = new System.Drawing.Size(85, 22);
             this.MenuItemFile.Text = "ファイル(&F)";
             // 
-            // MenuItemFileExit
-            // 
-            this.MenuItemFileExit.Name = "MenuItemFileExit";
-            this.MenuItemFileExit.Size = new System.Drawing.Size(202, 22);
-            this.MenuItemFileExit.Text = "終了(&X)";
-            this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
-            // 
-            // textBoxMain
-            // 
-            this.textBoxMain.Location = new System.Drawing.Point(0, 29);
-            this.textBoxMain.Name = "textBoxMain";
-            this.textBoxMain.Size = new System.Drawing.Size(100, 19);
-            this.textBoxMain.TabIndex = 1;
-            // 
             // MenuItemFileNew
             // 
             this.MenuItemFileNew.Name = "MenuItemFileNew";
@@ -90,6 +77,7 @@
             this.MenuItemFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.MenuItemFileOpen.Size = new System.Drawing.Size(202, 22);
             this.MenuItemFileOpen.Text = "開く(&O)...";
+            this.MenuItemFileOpen.Click += new System.EventHandler(this.MenuItemFileOpen_Click);
             // 
             // MenuItemFileSave
             // 
@@ -108,6 +96,24 @@
             // 
             this.MenuItemFileSeparator1.Name = "MenuItemFileSeparator1";
             this.MenuItemFileSeparator1.Size = new System.Drawing.Size(199, 6);
+            // 
+            // MenuItemFileExit
+            // 
+            this.MenuItemFileExit.Name = "MenuItemFileExit";
+            this.MenuItemFileExit.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileExit.Text = "終了(&X)";
+            this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
+            // 
+            // textBoxMain
+            // 
+            this.textBoxMain.Location = new System.Drawing.Point(0, 29);
+            this.textBoxMain.Name = "textBoxMain";
+            this.textBoxMain.Size = new System.Drawing.Size(100, 19);
+            this.textBoxMain.TabIndex = 1;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -138,6 +144,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSave;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSaveAs;
         private System.Windows.Forms.ToolStripSeparator MenuItemFileSeparator1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

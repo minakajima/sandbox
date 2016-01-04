@@ -30,5 +30,21 @@ namespace MyMemo
         {
             Close();
         }
+
+        private void MenuItemFileOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = "";
+            if (DialogResult.OK == openFileDialog1.ShowDialog())
+            {
+                LoadFile(openFileDialog1.FileName);
+            }
+        }
+           
+        private void LoadFile(string value)
+        {
+            textBoxMain.Text = System.IO.File.ReadAllText(
+                value, Encoding.GetEncoding(
+                    "Shift_JIS"));
+        }
     }
 }
