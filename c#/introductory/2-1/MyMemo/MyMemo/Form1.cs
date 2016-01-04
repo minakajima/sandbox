@@ -13,6 +13,8 @@ namespace MyMemo
     public partial class Form1 : Form
     {
         const string ApplicationName = "MyMemo";
+        private string FileName = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace MyMemo
             textBoxMain.Multiline = true;
             textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Dock = DockStyle.Fill;
+            saveFileDialog1.Filter = "テキスト文章|*.txt|すべてのファイル|*.*";
         }
 
         private void MenuItemFileExit_Click(object sender, EventArgs e)
@@ -45,6 +48,24 @@ namespace MyMemo
             textBoxMain.Text = System.IO.File.ReadAllText(
                 value, Encoding.GetEncoding(
                     "Shift_JIS"));
+            textBoxMain.Select(0, 0);
+            FileName = value;
+        }
+
+        private void MenuItemFileSaveAs_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = System.IO.Path.GetFileName(FileName);
+            if(DialogResult.OK == saveFileDialog1.ShowDialog())
+            {
+                SaveFile(saveFileDialog1.FileName);
+            }
+        }
+
+        private void SaveFile(string value)
+        {
+            System.IO.File.WriteAllText(value, textBoxMain.Text,
+                System.Text.Encoding.GetEncoding("Shift_JIS"));
+            FileName = value;
         }
     }
 }

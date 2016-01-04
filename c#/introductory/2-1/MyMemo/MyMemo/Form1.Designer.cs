@@ -38,6 +38,7 @@
             this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMain = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +92,7 @@
             this.MenuItemFileSaveAs.Name = "MenuItemFileSaveAs";
             this.MenuItemFileSaveAs.Size = new System.Drawing.Size(202, 22);
             this.MenuItemFileSaveAs.Text = "名前を付けて保存(&A)...";
+            this.MenuItemFileSaveAs.Click += new System.EventHandler(this.MenuItemFileSaveAs_Click);
             // 
             // MenuItemFileSeparator1
             // 
@@ -145,6 +147,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSaveAs;
         private System.Windows.Forms.ToolStripSeparator MenuItemFileSeparator1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
