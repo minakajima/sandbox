@@ -19,19 +19,40 @@ namespace MyMemo
             get { return FileNameValue; }
             set
             {
-                string s = ApplicationName;
-                if(value != "")
-                {
-                    s += " - " + value;
-                    MenuItemFileSave.Enabled = true;
-                }
-                else
-                {
-                    MenuItemFileSave.Enabled = false;
-                }
-                this.Text = s;
                 FileNameValue = value;
+                Edited = false;
             }
+        }
+
+        private bool EditedValue;
+        private bool Edited
+        {
+            get { return EditedValue; }
+            set
+            {
+                EditedValue = value;
+                UpdateStatus();
+            }
+        }
+        private void UpdateStatus()
+        {
+            string s = ApplicationName;
+            if( FileName != "")
+            {
+                s += " - " + FileName;
+            }
+            if (Edited) s += "(変更あり) ";
+            this.Text = s;
+
+            if (FileName == "" || !Edited)
+                MenuItemFileSave.Enabled = false;
+            else
+                MenuItemFileSave.Enabled = true;
+
+            if (!Edited)
+                MenuItemFileSaveAs.Enabled = false;
+            else
+                MenuItemFileSaveAs.Enabled = true;
         }
 
         public Form1()
@@ -90,6 +111,11 @@ namespace MyMemo
         private void MenuItemFileSave_Click(object sender, EventArgs e)
         {
             SaveFile(FileName);
+        }
+
+        private void textBoxMain_TextChanged(object sender, EventArgs e)
+        {
+            Edited = true;
         }
     }
 }

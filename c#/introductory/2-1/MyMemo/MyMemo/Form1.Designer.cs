@@ -113,6 +113,7 @@
             this.textBoxMain.Name = "textBoxMain";
             this.textBoxMain.Size = new System.Drawing.Size(100, 19);
             this.textBoxMain.TabIndex = 1;
+            this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
             // openFileDialog1
             // 
