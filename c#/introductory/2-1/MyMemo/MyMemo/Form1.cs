@@ -23,6 +23,11 @@ namespace MyMemo
                 if(value != "")
                 {
                     s += " - " + value;
+                    MenuItemFileSave.Enabled = true;
+                }
+                else
+                {
+                    MenuItemFileSave.Enabled = false;
                 }
                 this.Text = s;
                 FileNameValue = value;
@@ -36,7 +41,7 @@ namespace MyMemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Text = ApplicationName;
+            FileName = "";
             textBoxMain.Multiline = true;
             textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Dock = DockStyle.Fill;
@@ -80,6 +85,11 @@ namespace MyMemo
             System.IO.File.WriteAllText(value, textBoxMain.Text,
                 System.Text.Encoding.GetEncoding("Shift_JIS"));
             FileName = value;
+        }
+
+        private void MenuItemFileSave_Click(object sender, EventArgs e)
+        {
+            SaveFile(FileName);
         }
     }
 }
