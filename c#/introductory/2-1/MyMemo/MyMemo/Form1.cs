@@ -77,6 +77,8 @@ namespace MyMemo
             textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Dock = DockStyle.Fill;
             saveFileDialog1.Filter = "テキスト文章|*.txt|すべてのファイル|*.*";
+            fontDialog1.ShowEffects = false;
+            fontDialog1.AllowScriptChange = false;
 
             Microsoft.Win32.RegistryKey regKey =
                 Microsoft.Win32.Registry.CurrentUser.
