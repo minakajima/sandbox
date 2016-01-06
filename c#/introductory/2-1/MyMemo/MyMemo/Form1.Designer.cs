@@ -110,9 +110,10 @@
             // 
             // textBoxMain
             // 
+            this.textBoxMain.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxMain.Location = new System.Drawing.Point(0, 29);
             this.textBoxMain.Name = "textBoxMain";
-            this.textBoxMain.Size = new System.Drawing.Size(100, 19);
+            this.textBoxMain.Size = new System.Drawing.Size(100, 23);
             this.textBoxMain.TabIndex = 1;
             this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
