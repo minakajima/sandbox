@@ -13,6 +13,11 @@ namespace MyMemo
     public partial class Form1 : Form
     {
         const string ApplicationName = "MyMemo";　// アプリ名
+        const string RegistryKey =
+            @"Software\NikkeiSoftware" +
+            ApplicationName;
+        private string FilePath;
+
         private string FileNameValue = "";
         private string FileName
         {
@@ -20,6 +25,11 @@ namespace MyMemo
             set
             {
                 FileNameValue = value;
+                if(value != "")
+                {
+                    FilePath =
+                        System.IO.Path.GetDirectoryName(value);
+                }
                 Edited = false;
             }
         }
@@ -67,6 +77,14 @@ namespace MyMemo
             textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Dock = DockStyle.Fill;
             saveFileDialog1.Filter = "テキスト文章|*.txt|すべてのファイル|*.*";
+
+            Microsoft.Win32.RegistryKey regKey =
+                Microsoft.Win32.Registry.CurrentUser.
+                CreateSubKey(RegistryKey);
+            FilePath = regKey.GetValue("FilePath",
+                System.Environment.GetFolderPath(
+                System.Environment.SpecialFolder.MyDocuments)).
+                ToString();
             if(1 < Environment.GetCommandLineArgs().Length)
             {
                 string[] args = Environment.GetCommandLineArgs();
@@ -81,6 +99,9 @@ namespace MyMemo
 
         private void MenuItemFileOpen_Click(object sender, EventArgs e)
         {
+            if (!AskGiveUpText()) return;
+
+            openFileDialog1.InitialDirectory = FilePath;
             openFileDialog1.FileName = "";
             if (DialogResult.OK == openFileDialog1.ShowDialog())
             {
@@ -108,6 +129,7 @@ namespace MyMemo
 
         private void MenuItemFileSaveAs_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.InitialDirectory = FilePath;
             saveFileDialog1.FileName = System.IO.Path.GetFileName(FileName);
             if(DialogResult.OK == saveFileDialog1.ShowDialog())
             {
@@ -155,6 +177,14 @@ namespace MyMemo
             if (!AskGiveUpText()) return;
             textBoxMain.Clear();
             FileName = "";
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Microsoft.Win32.RegistryKey regKey =
+                Microsoft.Win32.Registry.CurrentUser.
+                CreateSubKey(RegistryKey);
+            regKey.SetValue("FilePath", FilePath);
         }
     }
 }
