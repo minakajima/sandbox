@@ -39,13 +39,17 @@
             this.textBoxMain = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemFile});
+            this.MenuItemFile,
+            this.設定SToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 26);
@@ -121,6 +125,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // 設定SToolStripMenuItem
+            // 
+            this.設定SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemFont});
+            this.設定SToolStripMenuItem.Name = "設定SToolStripMenuItem";
+            this.設定SToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
+            this.設定SToolStripMenuItem.Text = "設定(&S)";
+            // 
+            // MenuItemFont
+            // 
+            this.MenuItemFont.Name = "MenuItemFont";
+            this.MenuItemFont.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemFont.Text = "フォント";
+            this.MenuItemFont.Click += new System.EventHandler(this.MenuItemFont_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -154,6 +173,9 @@
         private System.Windows.Forms.ToolStripSeparator MenuItemFileSeparator1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem 設定SToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFont;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 

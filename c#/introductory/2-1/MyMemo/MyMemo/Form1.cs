@@ -186,5 +186,12 @@ namespace MyMemo
                 CreateSubKey(RegistryKey);
             regKey.SetValue("FilePath", FilePath);
         }
+
+        private void MenuItemFont_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = textBoxMain.Font;
+            if (DialogResult.OK == fontDialog1.ShowDialog())
+                textBoxMain.Font = fontDialog1.Font;
+        }
     }
 }
