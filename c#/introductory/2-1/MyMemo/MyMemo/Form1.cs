@@ -83,10 +83,22 @@ namespace MyMemo
             Microsoft.Win32.RegistryKey regKey =
                 Microsoft.Win32.Registry.CurrentUser.
                 CreateSubKey(RegistryKey);
+            // ファイルパス設定の読み込み
             FilePath = regKey.GetValue("FilePath",
                 System.Environment.GetFolderPath(
                 System.Environment.SpecialFolder.MyDocuments)).
                 ToString();
+            // フォント設定の読み込み
+            string name =
+                regKey.GetValue("FontName", "ＭＳ ゴシック").ToString();
+            Single size = Single.Parse(regKey.GetValue("FontSize", 12).ToString());
+            bool bold = bool.Parse(regKey.GetValue("FontBold", false).ToString());
+            bool italic = bool.Parse(regKey.GetValue("FontItalic", false).ToString());
+            System.Drawing.FontStyle style = new System.Drawing.FontStyle();
+            if (bold) style = System.Drawing.FontStyle.Bold;
+            if (italic) style = style ^ System.Drawing.FontStyle.Italic;
+            textBoxMain.Font = new System.Drawing.Font(name, size, style);
+
             if(1 < Environment.GetCommandLineArgs().Length)
             {
                 string[] args = Environment.GetCommandLineArgs();
@@ -187,6 +199,10 @@ namespace MyMemo
                 Microsoft.Win32.Registry.CurrentUser.
                 CreateSubKey(RegistryKey);
             regKey.SetValue("FilePath", FilePath);
+            regKey.SetValue("FontName", textBoxMain.Font.Name);
+            regKey.SetValue("FontSize", textBoxMain.Font.Size);
+            regKey.SetValue("FontBold", textBoxMain.Font.Bold);
+            regKey.SetValue("FontItalic", textBoxMain.Font.Italic);
         }
 
         private void MenuItemFont_Click(object sender, EventArgs e)
