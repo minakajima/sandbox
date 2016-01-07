@@ -99,6 +99,12 @@ namespace MyMemo
             if (italic) style = style ^ System.Drawing.FontStyle.Italic;
             textBoxMain.Font = new System.Drawing.Font(name, size, style);
 
+            // ウィンドウが小さくなり過ぎないように
+            const int initialWidth = 400;
+            const int initialHeight = 200;
+            this.MinimumSize = new System.Drawing.Size(
+                initialWidth, initialHeight);
+
             if(1 < Environment.GetCommandLineArgs().Length)
             {
                 string[] args = Environment.GetCommandLineArgs();
