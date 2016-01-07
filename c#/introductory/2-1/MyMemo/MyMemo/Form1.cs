@@ -105,7 +105,23 @@ namespace MyMemo
             this.MinimumSize = new System.Drawing.Size(
                 initialWidth, initialHeight);
 
-            if(1 < Environment.GetCommandLineArgs().Length)
+            // ウィンドウの位置と大きさを読み込み
+            const int initialLeft = 100;
+            const int initialTop = 100;
+            int l = int.Parse(regKey.GetValue("Left", initialLeft).ToString());
+            int t = int.Parse(regKey.GetValue("Top", initialTop).ToString());
+            int w = int.Parse(regKey.GetValue("Width", initialWidth).ToString());
+            int h = int.Parse(regKey.GetValue("Height", initialHeight).ToString());
+            if (l < Screen.GetWorkingArea(this).Left ||
+                l >= Screen.GetWorkingArea(this).Right)
+                l = initialLeft;
+            if (t < Screen.GetWorkingArea(this).Top ||
+                t >= Screen.GetWorkingArea(this).Bottom)
+                t = initialTop;
+            this.SetDesktopBounds(l, t, w, h);
+
+            // コマンド引数でファイル名を受け取る
+            if (1 < Environment.GetCommandLineArgs().Length)
             {
                 string[] args = Environment.GetCommandLineArgs();
                 LoadFile(args[1]);
@@ -204,11 +220,17 @@ namespace MyMemo
             Microsoft.Win32.RegistryKey regKey =
                 Microsoft.Win32.Registry.CurrentUser.
                 CreateSubKey(RegistryKey);
+            // フォント設定を覚える
             regKey.SetValue("FilePath", FilePath);
             regKey.SetValue("FontName", textBoxMain.Font.Name);
             regKey.SetValue("FontSize", textBoxMain.Font.Size);
             regKey.SetValue("FontBold", textBoxMain.Font.Bold);
             regKey.SetValue("FontItalic", textBoxMain.Font.Italic);
+            // ウィンドウの位置と大きさを覚える
+            regKey.SetValue("Left", DesktopBounds.Left);
+            regKey.SetValue("Top", DesktopBounds.Top);
+            regKey.SetValue("Width", DesktopBounds.Width);
+            regKey.SetValue("Height", DesktopBounds.Height);
         }
 
         private void MenuItemFont_Click(object sender, EventArgs e)
