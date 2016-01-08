@@ -239,5 +239,35 @@ namespace MyMemo
             if (DialogResult.OK == fontDialog1.ShowDialog())
                 textBoxMain.Font = fontDialog1.Font;
         }
+
+        private void MenuItemEditUndo_Click(object sender, EventArgs e)
+        {
+            textBoxMain.Undo();
+        }
+
+        private void MenuItemEditCut_Click(object sender, EventArgs e)
+        {
+            textBoxMain.Cut();
+        }
+
+        private void MenuItemEditCopy_Click(object sender, EventArgs e)
+        {
+            textBoxMain.Copy();
+        }
+
+        private void MenuItemEditPaste_Click(object sender, EventArgs e)
+        {
+            textBoxMain.Paste();
+        }
+
+        private void MenuItemEditDelete_Click(object sender, EventArgs e)
+        {
+            textBoxMain.SelectedText = "";
+        }
+
+        private void MenuItemEditSelectAll_Click(object sender, EventArgs e)
+        {
+            textBoxMain.SelectAll();
+        }
     }
 }
