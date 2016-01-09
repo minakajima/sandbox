@@ -291,5 +291,30 @@ namespace MyMemo
         {
             MenuItemEditDelete.Enabled = false;
         }
+
+        private void MenuItemHelpReadMe_Click(object sender, EventArgs e)
+        {
+            string s = System.IO.Path.GetDirectoryName(
+                Application.ExecutablePath);
+            s = System.IO.Path.Combine(s, "README.TXT");
+            if (System.IO.File.Exists(s))
+                System.Diagnostics.Process.Start(s);
+            else
+                MessageBox.Show(s + "が見つかりません",
+                    ApplicationName);
+        }
+
+        private void MenuItemHelpWeb_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(
+                "http://software.nikkeibp.co.jp/");
+        }
+
+        private void MenuItemHelpVersion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ApplicationName + " 0.01" +
+                Environment.NewLine +
+                "(c)2009-2015 Mikio Nakajima", "バージョン情報");
+        }
     }
 }

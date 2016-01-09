@@ -47,6 +47,10 @@
             this.MenuItemEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemHelpReadMe = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemHelpWeb = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemHelpVersion = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMain = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -59,7 +63,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemFile,
             this.MenuItemEdit,
-            this.設定SToolStripMenuItem});
+            this.設定SToolStripMenuItem,
+            this.MenuItemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -212,6 +217,37 @@
             this.MenuItemFont.Text = "フォント";
             this.MenuItemFont.Click += new System.EventHandler(this.MenuItemFont_Click);
             // 
+            // MenuItemHelp
+            // 
+            this.MenuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemHelpReadMe,
+            this.MenuItemHelpWeb,
+            this.MenuItemHelpVersion});
+            this.MenuItemHelp.Name = "MenuItemHelp";
+            this.MenuItemHelp.Size = new System.Drawing.Size(65, 20);
+            this.MenuItemHelp.Text = "ヘルプ(&H)";
+            // 
+            // MenuItemHelpReadMe
+            // 
+            this.MenuItemHelpReadMe.Name = "MenuItemHelpReadMe";
+            this.MenuItemHelpReadMe.Size = new System.Drawing.Size(191, 22);
+            this.MenuItemHelpReadMe.Text = "README.TXTの表示(&R)";
+            this.MenuItemHelpReadMe.Click += new System.EventHandler(this.MenuItemHelpReadMe_Click);
+            // 
+            // MenuItemHelpWeb
+            // 
+            this.MenuItemHelpWeb.Name = "MenuItemHelpWeb";
+            this.MenuItemHelpWeb.Size = new System.Drawing.Size(191, 22);
+            this.MenuItemHelpWeb.Text = "Webサイトの表示(&W)";
+            this.MenuItemHelpWeb.Click += new System.EventHandler(this.MenuItemHelpWeb_Click);
+            // 
+            // MenuItemHelpVersion
+            // 
+            this.MenuItemHelpVersion.Name = "MenuItemHelpVersion";
+            this.MenuItemHelpVersion.Size = new System.Drawing.Size(191, 22);
+            this.MenuItemHelpVersion.Text = "バージョン情報(&V)";
+            this.MenuItemHelpVersion.Click += new System.EventHandler(this.MenuItemHelpVersion_Click);
+            // 
             // textBoxMain
             // 
             this.textBoxMain.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -270,6 +306,10 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemEditDelete;
         private System.Windows.Forms.ToolStripSeparator MenuItemSeparator2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemEditSelectAll;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemHelp;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemHelpReadMe;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemHelpWeb;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemHelpVersion;
     }
 }
 
