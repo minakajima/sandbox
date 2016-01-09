@@ -120,6 +120,9 @@ namespace MyMemo
                 t = initialTop;
             this.SetDesktopBounds(l, t, w, h);
 
+            // 不要なものは無効にする
+            MenuItemEdit_DropDownOpened(sender, e);
+
             // コマンド引数でファイル名を受け取る
             if (1 < Environment.GetCommandLineArgs().Length)
             {
@@ -268,6 +271,25 @@ namespace MyMemo
         private void MenuItemEditSelectAll_Click(object sender, EventArgs e)
         {
             textBoxMain.SelectAll();
+        }
+
+        private void MenuItemEdit_DropDownOpened(object sender, EventArgs e)
+        {
+            MenuItemEditPaste.Enabled =
+                Clipboard.ContainsText();
+
+            bool b = textBoxMain.SelectionLength == 0;
+            MenuItemEditCut.Enabled  = !b;
+            MenuItemEditCopy.Enabled = !b;
+            MenuItemEditDelete.Enabled = !b;
+
+            b = textBoxMain.TextLength == 0;
+            MenuItemEditSelectAll.Enabled = !b;
+        }
+
+        private void MenuItemEdit_DropDownClosed(object sender, EventArgs e)
+        {
+            MenuItemEditDelete.Enabled = false;
         }
     }
 }

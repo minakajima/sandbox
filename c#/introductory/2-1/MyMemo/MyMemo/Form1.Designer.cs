@@ -36,12 +36,6 @@
             this.MenuItemFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemFont = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxMain = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.MenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemEditUndo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemEditSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,6 +45,12 @@
             this.MenuItemEditDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxMain = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.設定SToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,14 +76,14 @@
             this.MenuItemFileSeparator1,
             this.MenuItemFileExit});
             this.MenuItemFile.Name = "MenuItemFile";
-            this.MenuItemFile.Size = new System.Drawing.Size(85, 22);
+            this.MenuItemFile.Size = new System.Drawing.Size(66, 20);
             this.MenuItemFile.Text = "ファイル(&F)";
             // 
             // MenuItemFileNew
             // 
             this.MenuItemFileNew.Name = "MenuItemFileNew";
             this.MenuItemFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.MenuItemFileNew.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileNew.Size = new System.Drawing.Size(186, 22);
             this.MenuItemFileNew.Text = "新規(&N)";
             this.MenuItemFileNew.Click += new System.EventHandler(this.MenuItemFileNew_Click);
             // 
@@ -91,7 +91,7 @@
             // 
             this.MenuItemFileOpen.Name = "MenuItemFileOpen";
             this.MenuItemFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.MenuItemFileOpen.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileOpen.Size = new System.Drawing.Size(186, 22);
             this.MenuItemFileOpen.Text = "開く(&O)...";
             this.MenuItemFileOpen.Click += new System.EventHandler(this.MenuItemFileOpen_Click);
             // 
@@ -99,41 +99,116 @@
             // 
             this.MenuItemFileSave.Name = "MenuItemFileSave";
             this.MenuItemFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.MenuItemFileSave.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileSave.Size = new System.Drawing.Size(186, 22);
             this.MenuItemFileSave.Text = "上書き保存(&S)";
             this.MenuItemFileSave.Click += new System.EventHandler(this.MenuItemFileSave_Click);
             // 
             // MenuItemFileSaveAs
             // 
             this.MenuItemFileSaveAs.Name = "MenuItemFileSaveAs";
-            this.MenuItemFileSaveAs.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileSaveAs.Size = new System.Drawing.Size(186, 22);
             this.MenuItemFileSaveAs.Text = "名前を付けて保存(&A)...";
             this.MenuItemFileSaveAs.Click += new System.EventHandler(this.MenuItemFileSaveAs_Click);
             // 
             // MenuItemFileSeparator1
             // 
             this.MenuItemFileSeparator1.Name = "MenuItemFileSeparator1";
-            this.MenuItemFileSeparator1.Size = new System.Drawing.Size(199, 6);
+            this.MenuItemFileSeparator1.Size = new System.Drawing.Size(183, 6);
             // 
             // MenuItemFileExit
             // 
             this.MenuItemFileExit.Name = "MenuItemFileExit";
-            this.MenuItemFileExit.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemFileExit.Size = new System.Drawing.Size(186, 22);
             this.MenuItemFileExit.Text = "終了(&X)";
             this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
+            // 
+            // MenuItemEdit
+            // 
+            this.MenuItemEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemEditUndo,
+            this.MenuItemEditSeparator1,
+            this.MenuItemEditCut,
+            this.MenuItemEditCopy,
+            this.MenuItemEditPaste,
+            this.MenuItemEditDelete,
+            this.MenuItemSeparator2,
+            this.MenuItemEditSelectAll});
+            this.MenuItemEdit.Name = "MenuItemEdit";
+            this.MenuItemEdit.Size = new System.Drawing.Size(57, 20);
+            this.MenuItemEdit.Text = "編集(&E)";
+            this.MenuItemEdit.DropDownClosed += new System.EventHandler(this.MenuItemEdit_DropDownClosed);
+            this.MenuItemEdit.DropDownOpened += new System.EventHandler(this.MenuItemEdit_DropDownOpened);
+            // 
+            // MenuItemEditUndo
+            // 
+            this.MenuItemEditUndo.Name = "MenuItemEditUndo";
+            this.MenuItemEditUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.MenuItemEditUndo.Size = new System.Drawing.Size(183, 22);
+            this.MenuItemEditUndo.Text = "元に戻す(&U)";
+            this.MenuItemEditUndo.Click += new System.EventHandler(this.MenuItemEditUndo_Click);
+            // 
+            // MenuItemEditSeparator1
+            // 
+            this.MenuItemEditSeparator1.Name = "MenuItemEditSeparator1";
+            this.MenuItemEditSeparator1.Size = new System.Drawing.Size(180, 6);
+            // 
+            // MenuItemEditCut
+            // 
+            this.MenuItemEditCut.Name = "MenuItemEditCut";
+            this.MenuItemEditCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.MenuItemEditCut.Size = new System.Drawing.Size(183, 22);
+            this.MenuItemEditCut.Text = "切り取り(&X)";
+            this.MenuItemEditCut.Click += new System.EventHandler(this.MenuItemEditCut_Click);
+            // 
+            // MenuItemEditCopy
+            // 
+            this.MenuItemEditCopy.Name = "MenuItemEditCopy";
+            this.MenuItemEditCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.MenuItemEditCopy.Size = new System.Drawing.Size(183, 22);
+            this.MenuItemEditCopy.Text = "コピー(&C)";
+            this.MenuItemEditCopy.Click += new System.EventHandler(this.MenuItemEditCopy_Click);
+            // 
+            // MenuItemEditPaste
+            // 
+            this.MenuItemEditPaste.Name = "MenuItemEditPaste";
+            this.MenuItemEditPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.MenuItemEditPaste.Size = new System.Drawing.Size(183, 22);
+            this.MenuItemEditPaste.Text = "貼り付け(&P)";
+            this.MenuItemEditPaste.Click += new System.EventHandler(this.MenuItemEditPaste_Click);
+            // 
+            // MenuItemEditDelete
+            // 
+            this.MenuItemEditDelete.Name = "MenuItemEditDelete";
+            this.MenuItemEditDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.MenuItemEditDelete.Size = new System.Drawing.Size(183, 22);
+            this.MenuItemEditDelete.Text = "削除(&L)";
+            this.MenuItemEditDelete.Click += new System.EventHandler(this.MenuItemEditDelete_Click);
+            // 
+            // MenuItemSeparator2
+            // 
+            this.MenuItemSeparator2.Name = "MenuItemSeparator2";
+            this.MenuItemSeparator2.Size = new System.Drawing.Size(180, 6);
+            // 
+            // MenuItemEditSelectAll
+            // 
+            this.MenuItemEditSelectAll.Name = "MenuItemEditSelectAll";
+            this.MenuItemEditSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.MenuItemEditSelectAll.Size = new System.Drawing.Size(183, 22);
+            this.MenuItemEditSelectAll.Text = "すべて選択(&A)";
+            this.MenuItemEditSelectAll.Click += new System.EventHandler(this.MenuItemEditSelectAll_Click);
             // 
             // 設定SToolStripMenuItem
             // 
             this.設定SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemFont});
             this.設定SToolStripMenuItem.Name = "設定SToolStripMenuItem";
-            this.設定SToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
+            this.設定SToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.設定SToolStripMenuItem.Text = "設定(&S)";
             // 
             // MenuItemFont
             // 
             this.MenuItemFont.Name = "MenuItemFont";
-            this.MenuItemFont.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemFont.Size = new System.Drawing.Size(107, 22);
             this.MenuItemFont.Text = "フォント";
             this.MenuItemFont.Click += new System.EventHandler(this.MenuItemFont_Click);
             // 
@@ -149,79 +224,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // MenuItemEdit
-            // 
-            this.MenuItemEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemEditUndo,
-            this.MenuItemEditSeparator1,
-            this.MenuItemEditCut,
-            this.MenuItemEditCopy,
-            this.MenuItemEditPaste,
-            this.MenuItemEditDelete,
-            this.MenuItemSeparator2,
-            this.MenuItemEditSelectAll});
-            this.MenuItemEdit.Name = "MenuItemEdit";
-            this.MenuItemEdit.Size = new System.Drawing.Size(61, 22);
-            this.MenuItemEdit.Text = "編集(&E)";
-            // 
-            // MenuItemEditUndo
-            // 
-            this.MenuItemEditUndo.Name = "MenuItemEditUndo";
-            this.MenuItemEditUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.MenuItemEditUndo.Size = new System.Drawing.Size(201, 22);
-            this.MenuItemEditUndo.Text = "元に戻す(&U)";
-            this.MenuItemEditUndo.Click += new System.EventHandler(this.MenuItemEditUndo_Click);
-            // 
-            // MenuItemEditSeparator1
-            // 
-            this.MenuItemEditSeparator1.Name = "MenuItemEditSeparator1";
-            this.MenuItemEditSeparator1.Size = new System.Drawing.Size(198, 6);
-            // 
-            // MenuItemEditCut
-            // 
-            this.MenuItemEditCut.Name = "MenuItemEditCut";
-            this.MenuItemEditCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.MenuItemEditCut.Size = new System.Drawing.Size(201, 22);
-            this.MenuItemEditCut.Text = "切り取り(&X)";
-            this.MenuItemEditCut.Click += new System.EventHandler(this.MenuItemEditCut_Click);
-            // 
-            // MenuItemEditCopy
-            // 
-            this.MenuItemEditCopy.Name = "MenuItemEditCopy";
-            this.MenuItemEditCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.MenuItemEditCopy.Size = new System.Drawing.Size(201, 22);
-            this.MenuItemEditCopy.Text = "コピー(&C)";
-            this.MenuItemEditCopy.Click += new System.EventHandler(this.MenuItemEditCopy_Click);
-            // 
-            // MenuItemEditPaste
-            // 
-            this.MenuItemEditPaste.Name = "MenuItemEditPaste";
-            this.MenuItemEditPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.MenuItemEditPaste.Size = new System.Drawing.Size(201, 22);
-            this.MenuItemEditPaste.Text = "貼り付け(&P)";
-            this.MenuItemEditPaste.Click += new System.EventHandler(this.MenuItemEditPaste_Click);
-            // 
-            // MenuItemEditDelete
-            // 
-            this.MenuItemEditDelete.Name = "MenuItemEditDelete";
-            this.MenuItemEditDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.MenuItemEditDelete.Size = new System.Drawing.Size(201, 22);
-            this.MenuItemEditDelete.Text = "削除(&L)";
-            this.MenuItemEditDelete.Click += new System.EventHandler(this.MenuItemEditDelete_Click);
-            // 
-            // MenuItemSeparator2
-            // 
-            this.MenuItemSeparator2.Name = "MenuItemSeparator2";
-            this.MenuItemSeparator2.Size = new System.Drawing.Size(198, 6);
-            // 
-            // MenuItemEditSelectAll
-            // 
-            this.MenuItemEditSelectAll.Name = "MenuItemEditSelectAll";
-            this.MenuItemEditSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.MenuItemEditSelectAll.Size = new System.Drawing.Size(201, 22);
-            this.MenuItemEditSelectAll.Text = "すべて選択(&A)";
-            this.MenuItemEditSelectAll.Click += new System.EventHandler(this.MenuItemEditSelectAll_Click);
             // 
             // Form1
             // 
