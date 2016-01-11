@@ -63,6 +63,10 @@ namespace MyMemo
                 MenuItemFileSaveAs.Enabled = false;
             else
                 MenuItemFileSaveAs.Enabled = true;
+
+            bool b = textBoxMain.TextLength == 0;
+            MenuItemFilePrint.Enabled = !b;
+            MenuItemFilePrintPreview.Enabled = !b;
         }
 
         public Form1()
@@ -122,6 +126,12 @@ namespace MyMemo
 
             // 不要なものは無効にする
             MenuItemEdit_DropDownOpened(sender, e);
+
+            // 印刷設定
+            printDialog1.Document = printDocument1;
+
+            // 印刷プレビュー
+            printPreviewDialog1.Document = printDocument1;
 
             // コマンド引数でファイル名を受け取る
             if (1 < Environment.GetCommandLineArgs().Length)
@@ -315,6 +325,50 @@ namespace MyMemo
             MessageBox.Show(ApplicationName + " 0.01" +
                 Environment.NewLine +
                 "(c)2009-2015 Mikio Nakajima", "バージョン情報");
+        }
+
+        private string PrintString;
+
+        private void MenuItemFilePrint_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.OK == printDialog1.ShowDialog())
+            {
+                SetPrintDocument1();
+                printDocument1.Print();
+            }
+        }
+
+        private void SetPrintDocument1()
+        {
+            PrintString = textBoxMain.Text;
+            printDocument1.DefaultPageSettings.Margins =
+                new System.Drawing.Printing.Margins(20, 60, 20, 60);
+            printDocument1.DocumentName = FileName;
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int charactersOnPage = 0;
+            int linePerPage = 0;
+            e.Graphics.MeasureString(PrintString, textBoxMain.Font,
+                e.MarginBounds.Size,
+                System.Drawing.StringFormat.GenericTypographic,
+                out charactersOnPage, out linePerPage);
+            e.Graphics.DrawString(PrintString, textBoxMain.Font,
+                System.Drawing.Brushes.Black, e.MarginBounds,
+                System.Drawing.StringFormat.GenericTypographic);
+            PrintString = PrintString.Substring(charactersOnPage);
+            if (PrintString.Length > 0)
+                e.HasMorePages = true;
+            else
+                e.HasMorePages = false;
+            PrintString = textBoxMain.Text;
+        }
+
+        private void MenuItemFilePrintPreview_Click(object sender, EventArgs e)
+        {
+            SetPrintDocument1();
+            printPreviewDialog1.ShowDialog();
         }
     }
 }
