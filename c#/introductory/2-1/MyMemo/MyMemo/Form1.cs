@@ -19,6 +19,11 @@ namespace MyMemo
         private string FilePath;
 
         private string FileNameValue = "";
+
+        private bool EditedValue;
+
+        private string PrintString;
+
         private string FileName
         {
             get { return FileNameValue; }
@@ -34,7 +39,6 @@ namespace MyMemo
             }
         }
 
-        private bool EditedValue;
         private bool Edited
         {
             get { return EditedValue; }
@@ -326,8 +330,6 @@ namespace MyMemo
                 Environment.NewLine +
                 "(c)2009-2015 Mikio Nakajima", "バージョン情報");
         }
-
-        private string PrintString;
 
         private void MenuItemFilePrint_Click(object sender, EventArgs e)
         {
