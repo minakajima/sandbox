@@ -54,7 +54,7 @@ namespace ApplicationTemplate01
 
         private void menuStrip1_MenuDeactivate(object sender, EventArgs e)
         {
-            if (ShowMenue) menuStrip1.Visible = false;
+            if (!ShowMenue) menuStrip1.Visible = false;
         }
 
         private void ToolStripMenuItemSettingShowMenu_Click(object sender, EventArgs e)
