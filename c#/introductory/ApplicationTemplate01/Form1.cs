@@ -24,6 +24,9 @@ namespace ApplicationTemplate01
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.WindowState = FormWindowState.Normal;
+            Properties.Settings.Default.Size = this.Size;
+            Properties.Settings.Default.Location = this.Location;
             Properties.Settings.Default.Save();
         }
 
@@ -45,6 +48,20 @@ namespace ApplicationTemplate01
         {
             this.KeyPreview = true;
             ShowMenue = Properties.Settings.Default.ShowMenu;
+
+            this.Text = Application.ProductName;
+            this.MinimumSize =
+                new System.Drawing.Size(300, 100);
+            this.Size = Properties.Settings.Default.Size;
+
+            this.Location =
+                Properties.Settings.Default.Location;
+            if (this.Left < Screen.GetWorkingArea(this).Left ||
+                this.Left >= Screen.GetWorkingArea(this).Right)
+                this.Left = 100;
+            if (this.Top < Screen.GetWorkingArea(this).Top ||
+                this.Top >= Screen.GetWorkingArea(this).Bottom)
+                this.Top = 100;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

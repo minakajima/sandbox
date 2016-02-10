@@ -34,5 +34,29 @@ namespace ApplicationTemplate01.Properties {
                 this["ShowMenu"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
+        public global::System.Drawing.Point Location {
+            get {
+                return ((global::System.Drawing.Point)(this["Location"]));
+            }
+            set {
+                this["Location"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300, 100")]
+        public global::System.Drawing.Size Size {
+            get {
+                return ((global::System.Drawing.Size)(this["Size"]));
+            }
+            set {
+                this["Size"] = value;
+            }
+        }
     }
 }
