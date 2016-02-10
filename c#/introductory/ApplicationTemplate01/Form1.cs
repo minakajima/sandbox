@@ -61,5 +61,63 @@ namespace ApplicationTemplate01
         {
             ShowMenue = !ShowMenue;
         }
+
+        private void ToolStripMenuItemHelpReadme_Click(object sender, EventArgs e)
+        {
+            string s = System.IO.Path.GetDirectoryName(
+                Application.ExecutablePath);
+            s = System.IO.Path.Combine(s, "readme.txt");
+            if (System.IO.File.Exists(s))
+                System.Diagnostics.Process.Start(s);
+            else
+                MessageBox.Show(s + "が見付かりません",
+                    "エラー");
+        }
+
+        private void ToolStripMenuItemHelpWeb_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(
+                "http://software.nikkeibp.co.jp/");
+        }
+
+        private void ToolStripMenuItemHelpVersion_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            s = Application.ProductName + " " +
+                Application.ProductVersion +
+                " (2012/02/29)" + Environment.NewLine;
+
+            System.Diagnostics.FileVersionInfo
+                fileVersionInfo = (
+                System.Diagnostics.FileVersionInfo.
+                GetVersionInfo(Application.ExecutablePath));
+            string copyright =
+                fileVersionInfo.LegalCopyright.ToString();
+            s += copyright + Environment.NewLine;
+
+            s += "実行ファイル:" + Environment.NewLine +
+                Application.ExecutablePath +
+                Environment.NewLine + "(";
+            if (Environment.Is64BitProcess)
+                s += "64";
+            else
+                s += "32";
+            s += "ビット・プロセスとして稼働) " +
+                Environment.NewLine + Environment.NewLine;
+
+            Microsoft.VisualBasic.Devices.Computer my
+                = new Microsoft.VisualBasic.Devices.
+                Computer();
+            s += "オペレーションシステム :" +
+                Environment.NewLine + my.Info.OSFullName +
+                " " + my.Info.OSVersion + " ";
+            if (Environment.Is64BitOperatingSystem)
+                s += "64";
+            else
+                s += "32";
+            s += "ビット";
+
+            MessageBox.Show(s, "バージョン情報");
+        }
     }
 }

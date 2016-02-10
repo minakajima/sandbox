@@ -123,18 +123,21 @@
             this.ToolStripMenuItemHelpReadme.Name = "ToolStripMenuItemHelpReadme";
             this.ToolStripMenuItemHelpReadme.Size = new System.Drawing.Size(178, 22);
             this.ToolStripMenuItemHelpReadme.Text = "readme.txtを表示(&R)";
+            this.ToolStripMenuItemHelpReadme.Click += new System.EventHandler(this.ToolStripMenuItemHelpReadme_Click);
             // 
             // ToolStripMenuItemHelpWeb
             // 
             this.ToolStripMenuItemHelpWeb.Name = "ToolStripMenuItemHelpWeb";
             this.ToolStripMenuItemHelpWeb.Size = new System.Drawing.Size(178, 22);
             this.ToolStripMenuItemHelpWeb.Text = "Webサイトを表示(&W)";
+            this.ToolStripMenuItemHelpWeb.Click += new System.EventHandler(this.ToolStripMenuItemHelpWeb_Click);
             // 
             // ToolStripMenuItemHelpVersion
             // 
             this.ToolStripMenuItemHelpVersion.Name = "ToolStripMenuItemHelpVersion";
             this.ToolStripMenuItemHelpVersion.Size = new System.Drawing.Size(178, 22);
             this.ToolStripMenuItemHelpVersion.Text = "バージョン情報(&V)";
+            this.ToolStripMenuItemHelpVersion.Click += new System.EventHandler(this.ToolStripMenuItemHelpVersion_Click);
             // 
             // Form1
             // 
