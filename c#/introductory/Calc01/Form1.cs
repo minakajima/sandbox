@@ -44,15 +44,50 @@ namespace Calc01
             }
         }
 
+        private enum Operations
+        {
+            None, Add, Subtract, Multiply, Divide
+        }
+        private Operations Operation;
+
+        private double DisplayValueValue, HiddenValue;
+        private double DisplayValue
+        {
+            get { return DisplayValueValue; }
+            set
+            {
+                DisplayValueValue = value;
+                if (!(labelMain.Text.Contains(".") && 
+                        labelMain.Text.EndsWith("0")))
+                    try
+                    {
+                        labelMain.Text =
+                            ((decimal)value).ToString();
+                    }
+                    catch (Exception)
+                    {
+                        labelMain.Text = value.ToString();
+
+                    }
+            }
+        }
+
+        private bool IsNewValue;
+        private double Memory = 0;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            ShowMenue = Properties.Settings.Default.ShowMenu;
 
             this.Text = Application.ProductName;
-            this.MinimumSize =
-                new System.Drawing.Size(300, 100);
-            this.Size = Properties.Settings.Default.Size;
+
+            //this.MinimumSize =
+            //    new System.Drawing.Size(300, 100);
+            //this.Size = Properties.Settings.Default.Size;
+            //ShowMenue = Properties.Settings.Default.ShowMenu;
+
+            ShowMenue = true;
+            ToolStripMenuItemSetting.Visible = false;
 
             this.Location =
                 Properties.Settings.Default.Location;
@@ -62,6 +97,18 @@ namespace Calc01
             if (this.Top < Screen.GetWorkingArea(this).Top ||
                 this.Top >= Screen.GetWorkingArea(this).Bottom)
                 this.Top = 100;
+
+            labelMain.TextAlign =
+                System.Drawing.ContentAlignment.MiddleRight;
+            Initalize();
+        }
+
+        private void Initalize()
+        {
+            HiddenValue = 0;
+            DisplayValue = 0;
+            IsNewValue = true;
+            Operation = Operations.None;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -95,6 +142,93 @@ namespace Calc01
         {
             System.Diagnostics.Process.Start(
                 "http://software.nikkeibp.co.jp/");
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            char c = ((Button)sender).Text.ToCharArray()[0];
+            switch(c)
+            {
+                case '+':
+                    UpdateValues();
+                    Operation = Operations.Add; break;
+                case '-':
+                    UpdateValues();
+                    Operation = Operations.Subtract; break;
+                case '*':
+                    UpdateValues();
+                    Operation = Operations.Multiply; break;
+                case '/':
+                    UpdateValues();
+                    Operation = Operations.Divide; break;
+                case '=':
+                    UpdateValues();
+                    Operation = Operations.None; break;
+                case 'C':
+                    Initalize();
+                    UpdateValues();
+                    break;
+                case '±':
+                    if (!IsNewValue)
+                    {
+                        if (labelMain.Text.StartsWith("-"))
+                            labelMain.Text =
+                                labelMain.Text.Substring(1);
+                        else
+                            labelMain.Text = "-" + labelMain.Text;
+                        SetDisplayValueFormText();
+                    }break;
+                case '.':
+                    if (IsNewValue) labelMain.Text = "0";
+                    if (!labelMain.Text.Contains("."))
+                        labelMain.Text += c;
+                    IsNewValue = false;
+                    break;
+                case '0':
+                case '1': case '2': case '3':
+                case '4': case '5': case '6': case '7':
+                case '8': case '9':
+                    if (IsNewValue) labelMain.Text = "";
+                    labelMain.Text += c;
+                    SetDisplayValueFormText();
+                    IsNewValue = false;
+                    break;
+                case 'M':
+                    Memory = DisplayValue;
+                    break;
+                case 'R':
+                    DisplayValue = Memory;
+                    IsNewValue = false;
+                    break;
+            }
+        }
+
+        private void UpdateValues()
+        {
+            if (!IsNewValue)
+            {
+                switch (Operation)
+                {
+                    case Operations.None:
+                        HiddenValue = DisplayValue; break;
+                    case Operations.Add:
+                        HiddenValue += DisplayValue; break;
+                    case Operations.Subtract:
+                        HiddenValue -= DisplayValue; break;
+                    case Operations.Multiply:
+                        HiddenValue *= DisplayValue; break;
+                    case Operations.Divide:
+                        HiddenValue /= DisplayValue; break;
+
+                }
+                IsNewValue = true;
+                DisplayValue = HiddenValue;
+            }
+        }
+
+        private void SetDisplayValueFormText()
+        {
+            DisplayValue = double.Parse(labelMain.Text);
         }
 
         private void ToolStripMenuItemHelpVersion_Click(object sender, EventArgs e)

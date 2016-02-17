@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.buttonEqual = new System.Windows.Forms.Button();
+            this.buttonMemory = new System.Windows.Forms.Button();
+            this.buttonRecall = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonDivide = new System.Windows.Forms.Button();
+            this.buttonMultiply = new System.Windows.Forms.Button();
+            this.buttonSubstract = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDot = new System.Windows.Forms.Button();
             this.buttonPlusMinus = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
@@ -51,14 +59,6 @@
             this.ToolStripMenuItemHelpReadme = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemHelpWeb = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemHelpVersion = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonDivide = new System.Windows.Forms.Button();
-            this.buttonMultiply = new System.Windows.Forms.Button();
-            this.buttonSubstract = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonEqual = new System.Windows.Forms.Button();
-            this.buttonMemory = new System.Windows.Forms.Button();
-            this.buttonRecall = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -107,6 +107,86 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
+            // buttonEqual
+            // 
+            this.buttonEqual.Location = new System.Drawing.Point(228, 153);
+            this.buttonEqual.Name = "buttonEqual";
+            this.buttonEqual.Size = new System.Drawing.Size(48, 30);
+            this.buttonEqual.TabIndex = 20;
+            this.buttonEqual.Text = "=";
+            this.buttonEqual.UseVisualStyleBackColor = true;
+            this.buttonEqual.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonMemory
+            // 
+            this.buttonMemory.Location = new System.Drawing.Point(228, 117);
+            this.buttonMemory.Name = "buttonMemory";
+            this.buttonMemory.Size = new System.Drawing.Size(48, 30);
+            this.buttonMemory.TabIndex = 19;
+            this.buttonMemory.Text = "M";
+            this.buttonMemory.UseVisualStyleBackColor = true;
+            this.buttonMemory.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonRecall
+            // 
+            this.buttonRecall.Location = new System.Drawing.Point(228, 81);
+            this.buttonRecall.Name = "buttonRecall";
+            this.buttonRecall.Size = new System.Drawing.Size(48, 30);
+            this.buttonRecall.TabIndex = 18;
+            this.buttonRecall.Text = "R";
+            this.buttonRecall.UseVisualStyleBackColor = true;
+            this.buttonRecall.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(228, 45);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(48, 30);
+            this.buttonClear.TabIndex = 17;
+            this.buttonClear.Text = "C";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonDivide
+            // 
+            this.buttonDivide.Location = new System.Drawing.Point(174, 153);
+            this.buttonDivide.Name = "buttonDivide";
+            this.buttonDivide.Size = new System.Drawing.Size(48, 30);
+            this.buttonDivide.TabIndex = 16;
+            this.buttonDivide.Text = "/";
+            this.buttonDivide.UseVisualStyleBackColor = true;
+            this.buttonDivide.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonMultiply
+            // 
+            this.buttonMultiply.Location = new System.Drawing.Point(174, 117);
+            this.buttonMultiply.Name = "buttonMultiply";
+            this.buttonMultiply.Size = new System.Drawing.Size(48, 30);
+            this.buttonMultiply.TabIndex = 15;
+            this.buttonMultiply.Text = "*";
+            this.buttonMultiply.UseVisualStyleBackColor = true;
+            this.buttonMultiply.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonSubstract
+            // 
+            this.buttonSubstract.Location = new System.Drawing.Point(174, 81);
+            this.buttonSubstract.Name = "buttonSubstract";
+            this.buttonSubstract.Size = new System.Drawing.Size(48, 30);
+            this.buttonSubstract.TabIndex = 14;
+            this.buttonSubstract.Text = "-";
+            this.buttonSubstract.UseVisualStyleBackColor = true;
+            this.buttonSubstract.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(174, 45);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(48, 30);
+            this.buttonAdd.TabIndex = 13;
+            this.buttonAdd.Text = "+";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.Button_Click);
+            // 
             // buttonDot
             // 
             this.buttonDot.Location = new System.Drawing.Point(120, 153);
@@ -115,6 +195,7 @@
             this.buttonDot.TabIndex = 12;
             this.buttonDot.Text = ".";
             this.buttonDot.UseVisualStyleBackColor = true;
+            this.buttonDot.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonPlusMinus
             // 
@@ -122,8 +203,9 @@
             this.buttonPlusMinus.Name = "buttonPlusMinus";
             this.buttonPlusMinus.Size = new System.Drawing.Size(48, 30);
             this.buttonPlusMinus.TabIndex = 11;
-            this.buttonPlusMinus.Text = " ±";
+            this.buttonPlusMinus.Text = "±";
             this.buttonPlusMinus.UseVisualStyleBackColor = true;
+            this.buttonPlusMinus.Click += new System.EventHandler(this.Button_Click);
             // 
             // button0
             // 
@@ -133,6 +215,7 @@
             this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.Button_Click);
             // 
             // button3
             // 
@@ -142,6 +225,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button_Click);
             // 
             // button2
             // 
@@ -151,6 +235,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button_Click);
             // 
             // button1
             // 
@@ -160,6 +245,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
             // button6
             // 
@@ -169,6 +255,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button_Click);
             // 
             // button5
             // 
@@ -178,6 +265,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button_Click);
             // 
             // button4
             // 
@@ -187,6 +275,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button_Click);
             // 
             // button9
             // 
@@ -196,6 +285,7 @@
             this.button9.TabIndex = 3;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button_Click);
             // 
             // button8
             // 
@@ -205,6 +295,7 @@
             this.button8.TabIndex = 2;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button_Click);
             // 
             // button7
             // 
@@ -214,6 +305,7 @@
             this.button7.TabIndex = 1;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button_Click);
             // 
             // labelMain
             // 
@@ -299,78 +391,6 @@
             this.ToolStripMenuItemHelpVersion.Size = new System.Drawing.Size(178, 22);
             this.ToolStripMenuItemHelpVersion.Text = "バージョン情報(&V)";
             this.ToolStripMenuItemHelpVersion.Click += new System.EventHandler(this.ToolStripMenuItemHelpVersion_Click);
-            // 
-            // buttonDivide
-            // 
-            this.buttonDivide.Location = new System.Drawing.Point(174, 153);
-            this.buttonDivide.Name = "buttonDivide";
-            this.buttonDivide.Size = new System.Drawing.Size(48, 30);
-            this.buttonDivide.TabIndex = 16;
-            this.buttonDivide.Text = "/";
-            this.buttonDivide.UseVisualStyleBackColor = true;
-            // 
-            // buttonMultiply
-            // 
-            this.buttonMultiply.Location = new System.Drawing.Point(174, 117);
-            this.buttonMultiply.Name = "buttonMultiply";
-            this.buttonMultiply.Size = new System.Drawing.Size(48, 30);
-            this.buttonMultiply.TabIndex = 15;
-            this.buttonMultiply.Text = "*";
-            this.buttonMultiply.UseVisualStyleBackColor = true;
-            // 
-            // buttonSubstract
-            // 
-            this.buttonSubstract.Location = new System.Drawing.Point(174, 81);
-            this.buttonSubstract.Name = "buttonSubstract";
-            this.buttonSubstract.Size = new System.Drawing.Size(48, 30);
-            this.buttonSubstract.TabIndex = 14;
-            this.buttonSubstract.Text = "-";
-            this.buttonSubstract.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(174, 45);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(48, 30);
-            this.buttonAdd.TabIndex = 13;
-            this.buttonAdd.Text = "+";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonEqual
-            // 
-            this.buttonEqual.Location = new System.Drawing.Point(228, 153);
-            this.buttonEqual.Name = "buttonEqual";
-            this.buttonEqual.Size = new System.Drawing.Size(48, 30);
-            this.buttonEqual.TabIndex = 20;
-            this.buttonEqual.Text = "=";
-            this.buttonEqual.UseVisualStyleBackColor = true;
-            // 
-            // buttonMemory
-            // 
-            this.buttonMemory.Location = new System.Drawing.Point(228, 117);
-            this.buttonMemory.Name = "buttonMemory";
-            this.buttonMemory.Size = new System.Drawing.Size(48, 30);
-            this.buttonMemory.TabIndex = 19;
-            this.buttonMemory.Text = "M";
-            this.buttonMemory.UseVisualStyleBackColor = true;
-            // 
-            // buttonRecall
-            // 
-            this.buttonRecall.Location = new System.Drawing.Point(228, 81);
-            this.buttonRecall.Name = "buttonRecall";
-            this.buttonRecall.Size = new System.Drawing.Size(48, 30);
-            this.buttonRecall.TabIndex = 18;
-            this.buttonRecall.Text = "R";
-            this.buttonRecall.UseVisualStyleBackColor = true;
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Location = new System.Drawing.Point(228, 45);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(48, 30);
-            this.buttonClear.TabIndex = 17;
-            this.buttonClear.Text = "C";
-            this.buttonClear.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
