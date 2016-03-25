@@ -144,9 +144,15 @@ namespace Calc01
                 "http://software.nikkeibp.co.jp/");
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        private void Button_Click(
+            object sender, EventArgs e)
         {
-            char c = ((Button)sender).Text.ToCharArray()[0];
+            Button_Click(((Button)sender).Text.ToCharArray()[0]);
+
+        }
+        private void Button_Click(char c)
+        {
+            c = char.ToUpper(c);
             switch(c)
             {
                 case '+':
@@ -169,6 +175,7 @@ namespace Calc01
                     UpdateValues();
                     break;
                 case '±':
+                case 'P':
                     if (!IsNewValue)
                     {
                         if (labelMain.Text.StartsWith("-"))
@@ -182,6 +189,14 @@ namespace Calc01
                     if (IsNewValue) labelMain.Text = "0";
                     if (!labelMain.Text.Contains("."))
                         labelMain.Text += c;
+                    IsNewValue = false;
+                    break;
+                case 'B':
+                    labelMain.Text = labelMain.Text.Substring(
+                        0, labelMain.Text.Length - 1);
+                    if (labelMain.Text == "")
+                        labelMain.Text = "0";
+                    SetDisplayValueFormText();
                     IsNewValue = false;
                     break;
                 case '0':
@@ -228,8 +243,38 @@ namespace Calc01
 
         private void SetDisplayValueFormText()
         {
-            DisplayValue = double.Parse(labelMain.Text);
+            try
+            {
+                DisplayValue = double.Parse(labelMain.Text);
+            }
+            catch (Exception)
+            {
+                DisplayValue = 0;
+            }
+            
         }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Button_Click(e.KeyChar);
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch(keyData & Keys.KeyCode)
+            {
+                case Keys.Enter:
+                    Button_Click('='); break;
+                case Keys.Back:
+                    Button_Click('B'); break;
+                case Keys.Escape:
+                    Button_Click('C'); break;
+                default:
+                    return base.ProcessDialogKey(keyData);
+            }
+            return true;
+        }
+
 
         private void ToolStripMenuItemHelpVersion_Click(object sender, EventArgs e)
         {
