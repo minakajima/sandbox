@@ -18,11 +18,17 @@
 <main>
 <div class="container">
 <section>
-
+    <p id="choice">ここに日付を表示します</p>
 </section>
 </div><!-- /.container -->
 </main>
 <footer>
+    <script>
+        'use strict';
+        console.log(document.getElementById('choice'));
+        document.getElementById('choice').textContent = new Date();
+        console.log(document.getElementById('choice').textContent);
+    </script>
 <div class="container">
 <p>JavaScript Samples</p>
 </div><!-- /.container -->
