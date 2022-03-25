@@ -24,6 +24,8 @@ int wmain(int argCount, wchar_t* argValue[])
     std::cout << utf8_to_ansi(utf8_str).c_str() << std::endl;
 #endif
     std::cout << "Hello World!\n";
+
+//    dbgmsg(_T("test"), utf8_to_wide(utf8_str).c_str());
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
