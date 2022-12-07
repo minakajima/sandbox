@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <style>
+            #circle {
+                width : 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color:green;
+                margin:10px;
+            }
+        </style>
     </head>
     <body>
         <script src="jquery-3.6.1.min.js"></script>
 
+        <div id="circle"></div>
+        <p>ここに文章が入ります</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RAAeVxVRCj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
         <script type="text/javascript">
-            if (typeof jQuery == "undefined") {
-                alert("jQueryがインストールされていません!")
-            } else {
-                alert("jQueryが無事に読み込まれました!")
-
-            }
-
+            $("div").hover(function () {
+                //$("p").html("")
+                //alert($("p").html())
+                $("iframe").attr("src", "http://learningdesign.jp");
+            })
         </script>
     </body>
     
