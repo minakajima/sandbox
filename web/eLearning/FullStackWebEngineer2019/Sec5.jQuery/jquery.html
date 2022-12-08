@@ -2,25 +2,29 @@
 <html>
     <head>
         <style>
-            #fadeIn {
-                display : none;
+            #circle {
+                width : 150px;
+                height: 150px;
+                border-radius:50%;
+                background-color:green;
             }
         </style>
     </head>
     <body>
         <script src="jquery-3.6.1.min.js"></script>
 
-        <p id="text">このテキストは反転します</p>
-        <button id="toggle">トグルする</button>
+        <div id="circle"></div>
+        
 
         <script type="text/javascript">
-            $("#toggle").click(function () {
-                if ($("#text").css("display") == "none") {
-                    $("#text").fadeIn("slow");
-                }
-                else {
-                    $("#text").fadeOut("slow");
-                }
+            $("#circle").click(function () {
+                $("#circle").animate({
+                    width: "400px",
+                    height: "400px",
+                    marginLeft: "100px"
+                }, 2000, function () {
+                        $("#circle").css("background-color", "red");
+                    });
             })
             
         </script>
