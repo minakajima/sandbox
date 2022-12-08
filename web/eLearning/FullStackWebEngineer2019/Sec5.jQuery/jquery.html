@@ -2,40 +2,27 @@
 <html>
     <head>
         <style>
-            #circle {
-                width : 150px;
-                height: 150px;
-                border-radius: 50%;
-                background-color:green;
-                margin:10px;
-            }
-            .square {
-                width: 150px;
-                height: 150px;
-                background-color: red;
-                margin: 10px;
+            #fadeIn {
+                display : none;
             }
         </style>
     </head>
     <body>
         <script src="jquery-3.6.1.min.js"></script>
 
-        <div id="circle"></div>
-        <div class="square"> </div>
-        <div class="square"> </div>
+        <p id="text">このテキストは反転します</p>
+        <button id="toggle">トグルする</button>
 
         <script type="text/javascript">
-            $("div").click(function () {
-                //alert("divがクリックされました");
-                /*
-                $("#circle").css("width", "300px");
-                $("#circle").css("height", "300px");
-                $("#circle").css("background-color", "red")
-                */
-                /*alert($("#circle").css("width"));
-                alert($("#circle").css("background-color"));*/
-                $(this).css("display", "none");
+            $("#toggle").click(function () {
+                if ($("#text").css("display") == "none") {
+                    $("#text").fadeIn("slow");
+                }
+                else {
+                    $("#text").fadeOut("slow");
+                }
             })
+            
         </script>
     </body>
     
