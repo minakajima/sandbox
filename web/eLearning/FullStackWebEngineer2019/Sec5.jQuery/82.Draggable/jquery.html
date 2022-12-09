@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../jquary-ui/jquery-ui.css">
+    <style>
+        #draggable {
+            width: 150px;
+            height: 150px;
+            padding: 0.5em;
+            background-color: aqua;
+        }
+        #container {
+            width:800px;
+            height:500px;
+            background-color:aquamarine;
+        }
+        #draggable2{
+            width:200px;
+            height:100px;
+            background-color:coral;
+        }
+    </style>
+</head>
+<body>
+    <div id="draggable">ドラッグしてくださいね</div>
+    <div id="container">
+        <div id="draggable2">このDivは指定された範囲内で動かせます。</div>
+    </div>
+    <script src="../jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+        $("#draggable").draggable({ axis: "y" });
+        $("#draggable2").draggable({ containment: "parent" })
+    </script>
+
+</body>
+</html>
