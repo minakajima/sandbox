@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Messager - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="./jquery-easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./jquery-easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="./jquery-easyui/demo/demo.css">
+	<script type="text/javascript" src="./jquery-easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery-easyui/jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic Messager</h2>
+	<p>Click on each button to see a distinct message box.</p>
+	<div style="margin:20px 0;">
+		<a href="#" class="easyui-linkbutton" onclick="progress()">Progress</a>
+	</div>
+	<script type="text/javascript">
+		function progress(){
+			var win = $.messager.progress({
+				title:'Please waiting',
+				msg:'Loading data...',
+				fn:function(k){
+					console.log('k:'+ k);
+				}
+				/*onclose:function(){
+					console.log('onclose');
+				}
+				onabort:function(){
+					console.log('onAbort');
+				},
+				onanimationcancel:function(){
+					console.log('onanimationcancel');
+				},
+				cansel:function(){
+					console.log('cansel');
+				}*/
+			});
+			
+			setTimeout(function(){
+				$.messager.progress('close');
+			},5000)
+			
+		}
+	</script>
+</body>
+</html>
