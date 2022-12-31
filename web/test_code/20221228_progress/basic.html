@@ -19,13 +19,23 @@
 		function progress(){
 			var win = $.messager.progress({
 				title:'Please waiting',
-				msg:'Loading data...',
+				msg: 'Loading data...',
+				onkeypress: function () {
+					console.log('onkeypress');
+				},
+
+				cancelIdleCallback: function () {
+					console.log('cancelIdleCallback');
+				},
 				fn:function(k){
 					console.log('k:'+ k);
-				}
-				/*onclose:function(){
-					console.log('onclose');
-				}
+				},
+				onended: function () {
+					console.log('onended');
+				},
+				onclose: function () {
+					console.log('conclose');
+				},
 				onabort:function(){
 					console.log('onAbort');
 				},
@@ -34,11 +44,15 @@
 				},
 				cansel:function(){
 					console.log('cansel');
-				}*/
+				}
 			});
+			// $.messager.progress({
+			// 	txt:'AAA'
+			// })
 			
 			setTimeout(function(){
 				$.messager.progress('close');
+				console.log('close');
 			},5000)
 			
 		}
