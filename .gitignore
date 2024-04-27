@@ -34,3 +34,4 @@ c#/sample/sample/obj/Debug/net8.0/sample.pdb
 c#/sample/sample/obj/Debug/net8.0/sample.sourcelink.json
 c#/sample/sample/obj/Debug/net8.0/ref/sample.dll
 c#/sample/sample/obj/Debug/net8.0/refint/sample.dll
+C++/mem_leak_test/mem_leak_test.exe
