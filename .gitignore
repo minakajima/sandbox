@@ -35,3 +35,8 @@ c#/sample/sample/obj/Debug/net8.0/sample.sourcelink.json
 c#/sample/sample/obj/Debug/net8.0/ref/sample.dll
 c#/sample/sample/obj/Debug/net8.0/refint/sample.dll
 C++/mem_leak_test/mem_leak_test.exe
+c#/windowApp_sample/windowApp_sample/obj/project.assets.json
+c#/windowApp_sample/windowApp_sample/obj/project.nuget.cache
+c#/windowApp_sample/windowApp_sample/obj/windowApp_sample.csproj.nuget.dgspec.json
+c#/windowApp_sample/windowApp_sample/obj/windowApp_sample.csproj.nuget.g.props
+c#/windowApp_sample/windowApp_sample/obj/windowApp_sample.csproj.nuget.g.targets
