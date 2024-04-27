@@ -5,7 +5,10 @@ using System.Windows.Forms;
 namespace windowApp_sample
 {
     public static class Program
-    {
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
+    /// {
         [STAThread]
         static void Main()
         {
@@ -17,10 +20,19 @@ namespace windowApp_sample
 
     public class MainForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainForm"/> class.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for the MainForm FormClosing event.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">The FormClosingEventArgs containing event data.</param>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Handle the form closing event
@@ -47,6 +59,5 @@ namespace windowApp_sample
             this.Controls.Add(closeButton);
 
             // Add your other controls and logic here
-          }
+        }
     }
-}
