@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="cpp_dll\**" />
+    <EmbeddedResource Remove="cpp_dll\**" />
+    <None Remove="cpp_dll\**" />
+  </ItemGroup>
+
 </Project>

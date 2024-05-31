@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Data\\code\\sandbox\\c#\\exception_test\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EF915-285B-43B8-960D-456195F427EA}|exception_test.csproj|c:\\data\\code\\sandbox\\c#\\exception_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87EF915-285B-43B8-960D-456195F427EA}|exception_test.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{760C32AC-AE48-4B15-8E6F-6F9B4CB99ECC}|..\\cpp_dll\\cpp_dll.vcxproj|C:\\Data\\code\\sandbox\\c#\\cpp_dll\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{760C32AC-AE48-4B15-8E6F-6F9B4CB99ECC}|..\\cpp_dll\\cpp_dll.vcxproj|C:\\Data\\code\\sandbox\\c#\\cpp_dll\\cpp_dll.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Data\\code\\sandbox\\c#\\exception_test\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Data\\code\\sandbox\\c#\\exception_test\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAqwBwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:46:59.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dllmain.cpp",
+              "DocumentMoniker": "C:\\Data\\code\\sandbox\\c#\\cpp_dll\\dllmain.cpp",
+              "RelativeDocumentMoniker": "..\\cpp_dll\\dllmain.cpp",
+              "ToolTip": "C:\\Data\\code\\sandbox\\c#\\cpp_dll\\dllmain.cpp",
+              "RelativeToolTip": "..\\cpp_dll\\dllmain.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-25T10:46:06.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cpp_dll.cpp",
+              "DocumentMoniker": "C:\\Data\\code\\sandbox\\c#\\cpp_dll\\cpp_dll.cpp",
+              "RelativeDocumentMoniker": "..\\cpp_dll\\cpp_dll.cpp",
+              "ToolTip": "C:\\Data\\code\\sandbox\\c#\\cpp_dll\\cpp_dll.cpp",
+              "RelativeToolTip": "..\\cpp_dll\\cpp_dll.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-25T10:46:05.994Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
