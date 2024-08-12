@@ -8,7 +8,7 @@ def unzip_files(start_index, end_index, output_directory):
 
     for i in range(start_index, end_index + 1):
         zip_file_name = f'takeout-20240810T125200Z-{i:03}.zip'
-        zip_file_path = f'C:/Data/code/sandbox/python/file/{zip_file_name}'
+        zip_file_path = f'C:/Data/googleフォト/{zip_file_name}'
         try:
             with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
                 zip_ref.extractall(output_directory)
@@ -23,5 +23,5 @@ def unzip_files(start_index, end_index, output_directory):
 # 使用例
 start_index = 1
 end_index = 57
-output_directory = r'C:\Data\code\sandbox\python\file\output'  # 生の文字列リテラルを使用
+output_directory = r'C:/Data/googleフォト/output'  # 生の文字列リテラルを使用
 unzip_files(start_index, end_index, output_directory)
