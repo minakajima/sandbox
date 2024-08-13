@@ -1,6 +1,6 @@
 import time
 import network
-import ntptime
+import urequests as requests
 
 #Wi-Fiへの接続
 def connect_to_wifi(ssid, password):
@@ -40,23 +40,24 @@ except FileNotFoundError:
 # Wi-Fiに接続
 connect_to_wifi(ssid, password)
 
-#NTPサーバーとして"time.cloudflare.com"を指定
-ntptime.host = "time.cloudflare.com"
-
-# 時間の同期を試みる
-try:
-    # NTPサーバーから取得した時刻でPico WのRTCを同期
-    ntptime.settime()
-    print("NTP時間取得成功")
-    print(time.localtime())
-except:
-    print("NTP時間取得失敗")
-    raise
-
-# 世界標準時に9時間を足して日本時間に変換
-tm = time.localtime(time.time() + 9 * 60 * 60)
-
-# 現在の日付と時刻「年/月/日 時:分:秒」を表示
-print("{0}/{1:02d}/{2:02d} {3:02d}:{4:02d}:{5:02d}".format(tm[0], tm[1], tm[2], tm[3], tm[4], tm[5]))
+# web APIのURLを作成
+city_id = "230020" # 豊橋   
+# 地域IDは以下のURLから調べることができる
+# https://weather.tsukumijima.net/primary_area.xml
 
 
+# 天気予防APIのURL組み立て
+url = "https://weather.tsukumijima.net/api/forecast/city/" + city_id
+
+# 指定したURLから天気予報を取得
+response = requests.get(url)
+weather_data = response.json() # データをpythonの辞書型に変換
+
+# 今日の降水確率を取得 0:今日 1:明日 2:明後日('T12_18'は12時から18時の降水確率)
+rain_probability = weather_data['forecasts'][0]['chanceOfRain']['T12_18']
+
+# 降水確率が取れない場合の処理
+if rain_probability == "--%":
+   print("no value") # 降水確率が取得できない場合のメッセージ
+else:
+   print("降水確率 {}" .format(rain_probability)) # 降水確率を表示
