@@ -124,3 +124,6 @@ python/batrun_test/build/batrun_test/localpycs/pyimod04_pywin32.pyc
 python/batrun_test/build/batrun_test/localpycs/struct.pyc
 python/batrun_test/batrun_test.spec
 /C++/sqlite_test/.vs/sqlite_test
+/C++/sqlite_test/sqlite_test/x64/Debug
+/C++/sqlite_test/x64/Debug
+/C++/sqlite_test/test.db
