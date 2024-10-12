@@ -127,3 +127,10 @@ python/batrun_test/batrun_test.spec
 /C++/sqlite_test/sqlite_test/x64/Debug
 /C++/sqlite_test/x64/Debug
 /C++/sqlite_test/test.db
+c\#/introductory/2-1/MyMemo/MyMemo/obj/Debug/MyMemo.csproj.AssemblyReference.cache
+c\#/sample/sample/obj/Release/net8.0/sample.AssemblyInfo.cs
+c\#/sample/sample/obj/Release/net8.0/sample.AssemblyInfoInputs.cache
+c\#/sample/sample/obj/Release/net8.0/sample.assets.cache
+c\#/windowApp_sample/windowApp_sample/obj/Release/net8.0-windows/windowApp_sample.AssemblyInfo.cs
+c\#/windowApp_sample/windowApp_sample/obj/Release/net8.0-windows/windowApp_sample.AssemblyInfoInputs.cache
+c\#/windowApp_sample/windowApp_sample/obj/Release/net8.0-windows/windowApp_sample.assets.cache
