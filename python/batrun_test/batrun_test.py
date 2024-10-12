@@ -10,6 +10,9 @@ def main():
     result = f"Received input: {input_value}"
     
     print(result)
+
+    if(input_value == "1"):
+        return 1
     return 0
 
 if __name__ == "__main__":
