@@ -15,6 +15,7 @@ std::mutex db_mutex;
  */
 void execute_query(sqlite3* db, const std::string& query) {
     std::unique_lock<std::mutex> lock(db_mutex);
+	std::cout << "Executing query: " << query << std::endl;
     char* errMsg = nullptr;
     int rc = sqlite3_exec(db, query.c_str(), nullptr, nullptr, &errMsg);
     if (rc != SQLITE_OK) {
